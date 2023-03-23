@@ -56,6 +56,24 @@ function surah() {
                             <td>: ${dataSurah.tempatTurun}</td>
                         </tr>
                     </table>
+                    <div class="mt-2">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deskripsi${dataSurah.nomor}">
+                        Deskripsi
+                      </button>
+                      <div class="modal fade" id="deskripsi${dataSurah.nomor}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">${dataSurah.namaLatin}</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              ${dataSurah.deskripsi}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                 </div>
             </div>
