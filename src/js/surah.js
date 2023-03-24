@@ -20,41 +20,27 @@ function surah() {
         listSurahElement.innerHTML = '';
     
         data.forEach(dataSurah => {
+            const audioFull = JSON.stringify(dataSurah.audioFull,['01']);
+            const urlAudio = audioFull.split(':"').pop().split('"')[0];
         listSurahElement.innerHTML += `
-        <div class="col-lg-3">
+        <div class="col-xl-4 col-lg-4">
             <div class="card mb-3">
-                <div class="card-header">
-                    ${dataSurah.nomor}. ${dataSurah.namaLatin} (${dataSurah.arti})
-                </div>
                 <div class="card-body">
-                    <table>
-                        <tr>
-                            <td>Jumlah Ayat</td>
-                            <td>: ${dataSurah.jumlahAyat}</td>
-                        </tr>
-                        <tr>
-                            <td>Tempat Turun</td>
-                            <td>: ${dataSurah.tempatTurun}</td>
-                        </tr>
-                    </table>
-                    <div class="mt-2">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deskripsi${dataSurah.nomor}">
-                            Deskripsi
-                        </button>
-                        <div class="modal fade" id="deskripsi${dataSurah.nomor}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">${dataSurah.namaLatin}</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ${dataSurah.deskripsi}
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="col-2 center">
+                            ${dataSurah.nomor}
                         </div>
-
+                        <div class="col-7">
+                            <b>${dataSurah.namaLatin}</b> (${dataSurah.arti}) <br>
+                            ${dataSurah.tempatTurun}, ${dataSurah.jumlahAyat} ayat
+                        </audio>     
+                        </div>
+                        <div class="col-3">
+                            ${dataSurah.nama} <br>
+                            <a href="${urlAudio}">
+                                <img src="https://cdn-icons-png.flaticon.com/512/0/375.png" style="width:20px;height: 20px;" alt="play">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
