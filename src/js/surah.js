@@ -23,7 +23,7 @@ function surah() {
             const audioFull = JSON.stringify(dataSurah.audioFull,['01']);
             const urlAudio = audioFull.split(':"').pop().split('"')[0];
         listSurahElement.innerHTML += `
-        <div class="col-xl-4 col-lg-4">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 konten">
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="row">
