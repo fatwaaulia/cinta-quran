@@ -1,4 +1,4 @@
-function surah() {
+const surah = () => {
     const urlAPI = 'https://equran.id';
    
     const getSurah = async() => {
